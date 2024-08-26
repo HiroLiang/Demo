@@ -42,4 +42,10 @@ public class UserHandlerImpl implements UserHandler {
             throw new RuntimeException("User data not set");
         return new UserDataDto(this.userData);
     }
+
+    @Override
+    public UserDataDto getUserDateByName(String username) {
+        this.userData = userService.getUserData(username);
+        return this.getUserData();
+    }
 }

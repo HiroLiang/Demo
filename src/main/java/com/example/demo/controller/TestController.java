@@ -41,4 +41,11 @@ public class TestController {
                 .getUserData());
     }
 
+    // 取得資料 ( 一般這種方法需要有認證 ex. Jwt )
+    @GetMapping("/user/{name}")
+    public ResponseEntity<UserDataDto> getUserData(@PathVariable String name) {
+        UserHandler userHandler = handlerFactory.getUserHandler();
+        return ResponseEntity.ok(userHandler.getUserDateByName(name));
+    }
+
 }

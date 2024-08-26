@@ -10,4 +10,6 @@ public interface UserHandler {
     UserHandler login(String username, String password);
 
     UserDataDto getUserData();
+
+    UserDataDto getUserDateByName(String username);
 }
